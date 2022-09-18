@@ -1,8 +1,10 @@
 {{ define "main" }}
-    <input type="text" placeholder="Search" id="search">
+    <div class="search">
+        <input type="text" placeholder="Search" id="search">
+    </div>
 
     {{ range .Sections }}
-    <h1>{{ .Title }}</h1>
+    <h1 class="hiddable" data-tags="{{ range .Pages}}{{ replace .Title " " "_" | lower }}{{with .Params.tags}}{{range .}};{{replace . " " "_" | lower }}{{end}}{{end}};{{end}}">{{ .Title }}</h1>
     <div class="cards">
         {{- partial "cards.html" .Pages -}}
     </div>

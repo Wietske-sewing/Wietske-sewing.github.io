@@ -1,16 +1,16 @@
 {{ range . }}
-<div class="card" data-tags="{{ replace .Title " " "_" | lower }}{{with .Params.tags}}{{range .}};{{replace . " " "_" | lower }}{{end}}{{end}}">
-    <div class="card-img">
+<div class="card hiddable" data-tags="{{ replace .Title " " "_" | lower }}{{with .Params.tags}}{{range .}};{{replace . " " "_" | lower }}{{end}}{{end}}">
+    <a class="card-img" href="{{ .Permalink | relURL }}">
         <img src="/min{{ .Params.picture }}" width="100%" height="100%">
-    </div>
-    <div class="card-content">
-        <a href="{{ .Permalink | relURL }}"><h4>{{ .Title }}</h4></a>
+    </a>
+    <a class="card-content" href="{{ .Permalink | relURL }}">
+        <h4>{{ .Title }}</h4>
         {{ .Date.Format "Jan 2006" }} -
         {{ with .Params.tags }}
         {{ range . }}
-        <a href="/{{ absURL "tags/" }}{{ lower . }}"><button>{{printf . }}</button></a>
+        <button href="{{ absURL "tags/" }}{{ lower . }}">{{printf . }}</button>
         {{ end }}
         {{ end }}
-    </div>
+    </a>
 </div>
 {{ end }}

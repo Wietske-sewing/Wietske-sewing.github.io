@@ -8,7 +8,7 @@
     function filter(event) {
         const value = search_bar.value.replace(" ", "_").toLowerCase();
 
-        var cards = document.getElementsByClassName("card");
+        var cards = document.getElementsByClassName("hiddable");
         for (var i = 0; i < cards.length; i++) {
             const name = cards.item(i).getAttribute("data-tags");
             if (name.indexOf(value) !== -1) {
