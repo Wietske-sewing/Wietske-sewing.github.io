@@ -1,0 +1,25 @@
+{{ define "main" }}
+    <div class="piece">
+        <div class="piece-details">
+            <h1>{{ .Title }}</h1>
+            <ul>
+                <li><strong>Date: </strong>{{ .Date.Format "Jan 2006"}}</li>
+                {{ with .Params.source }}
+                <li><strong>Source: </strong>{{ printf . | safeHTML }}</li>
+                {{ end }}
+                {{ with .Params.size }}
+                <li><strong>Size: </strong>{{ printf . | safeHTML }}</li>
+                {{ end }}
+                {{ with .Params.Tags }}
+                <li><strong>Tags: </strong>{{ with . }}{{ range . }}<a href="{{ print (absURL "tags/") (urlize .) }}"><button>{{ printf . }}</button></a> {{ end }}{{ end }}</li>
+                {{ end }}
+
+            </ul>
+        </div>
+        {{ with .Params.picture }}
+        <div class="piece-picture">
+            <img src="/orig{{ . }}" width="100%">
+        </div>
+        {{ end }}
+    </div>
+{{ end }}

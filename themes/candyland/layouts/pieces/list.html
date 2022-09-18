@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <input type="text" placeholder="Search" id="search">
+
+    {{ range .Sections }}
+    <h1>{{ .Title }}</h1>
+    <div class="cards">
+        {{- partial "cards.html" .Pages -}}
+    </div>
+    {{ end }}
+{{ end }}

@@ -1,0 +1,26 @@
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+<script>
+    const search_bar = document.getElementById("search");
+    search_bar.addEventListener("input", filter);
+
+    function filter(event) {
+        const value = search_bar.value.replace(" ", "_").toLowerCase();
+
+        var cards = document.getElementsByClassName("card");
+        for (var i = 0; i < cards.length; i++) {
+            const name = cards.item(i).getAttribute("data-tags");
+            if (name.indexOf(value) !== -1) {
+                cards.item(i).style.display = "flex";
+            } else {
+                cards.item(i).style.display = "none";
+            }
+        }
+    }
+</script>
+
+<script>
+      feather.replace()
+</script>
+

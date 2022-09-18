@@ -1,0 +1,4 @@
+baseURL = 'https://wietske-sewing.github.io/'
+languageCode = 'en-us'
+title = 'wietske-sewing'
+theme = 'candyland'

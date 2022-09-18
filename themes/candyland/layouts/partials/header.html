@@ -1,0 +1,11 @@
+<nav>
+        <input type="checkbox" id="hamburger-menu" class="hamburger-menu">
+        <label for="hamburger-menu" id="hamburger-label" class="hamburger-label"><i data-feather="menu"></i></label>
+        <div>
+            <div><a href="/"><img src="/logo.svg">{{ replace .Site.Title "wietske" "ietske"}}</a></div>
+            {{ range .Site.Sections }}
+                <div class="foldable"><a href="{{ .Permalink | relURL }}">{{ .Title }}</a></div>
+            {{ end }}
+            <div class="foldable"><a href="/tags/">Patterns</a></div>
+        </div>
+</nav>

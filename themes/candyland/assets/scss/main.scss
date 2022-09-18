@@ -1,0 +1,245 @@
+$primary-color: #ffffff;
+$background-color: #ff55aa;
+$card-color: #ff88cc;
+$font-color: #550022;
+
+$font-size: 20px;
+
+$phone-size: 500px;
+$desktop-size: 1200px;
+
+body {
+    background-color: $background-color;
+    color: $font-color;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-size;
+    margin: 8px;
+}
+
+h1, h2 {
+    color: $primary-color;
+    font-family: 'Emilys Candy', cursive;
+}
+
+
+.card {
+    display: flex;
+    background-color: $card-color;
+    box-shadow: 5px 5px 10px $font-color;
+    justify-content: space-between;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-content {
+    width: 65%;
+}
+
+.card-img {
+    width: 30%;
+}
+
+.card-img > img {
+    object-fit: cover;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+                 
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: 1px dashed $font-color;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin: .5em;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+nav {
+    font-family: 'Emilys Candy', cursive;
+    color: $primary-color;
+    font-size: 1.8 * $font-size;
+    border-bottom: 4px dashed $primary-color;
+    display: flex; 
+    width: 100%;
+    flex-direction: row; 
+    justify-content: space-evenly;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+input[type="text"] {
+    border: 1px dashed $primary-color; 
+    height: 2em;
+    padding-left: 0.5em;
+    background-color: inherit;
+    color: $primary-color;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5 * $font-size;
+    width: 98%;
+}
+
+#content {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+input[type="text"]::placeholder {
+    color: $primary-color;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5 * $font-size;
+}
+
+#hamburger-menu {
+    display: none
+}
+
+
+
+.piece {
+    display: flex;
+    align-items: center;
+}
+
+.piece-details {
+    width: 70%;
+    justify-content: center;
+}
+
+.piece-picture {
+    width: 30%;
+}
+
+.foldable {
+    display: flex;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: $phone-size) {
+    .card {
+        width: 98%;
+        margin: 1%;
+        padding: 1%;
+        height: 15em;
+    }
+
+}
+
+@media screen and (min-width: $phone-size) and (max-width: $desktop-size) {
+    .card {
+        width: 48%;
+        margin: 1%;
+        min-height: 15em;
+    }
+}
+
+@media screen and (min-width: $desktop-size) {
+    #content {
+        width: 80%;
+        margin: auto;
+    }
+
+    footer {
+        justify-content: space-evenly;
+    }
+
+    .card {
+        width: 31%;
+        margin: 1%;
+        height: 15em;
+    }
+
+    nav > div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav > div > div {
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+
+    #hamburger-label {
+        display: none
+    }
+}
+
+@media screen and (max-width: $desktop-size) {
+    .piece-details {
+        width: 50%;
+    }
+
+    .piece-picture {
+        width: 50%;
+    }
+
+    #content {
+        width: 100%;
+        margin: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer > div{
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    #hamburger-label {
+        margin-top: 45px;
+    }
+
+    #hamburger-menu ~ div > .foldable {
+        display: none;
+    }
+
+    #hamburger-menu:checked ~ div > .foldable {
+        display: block;
+        margin-top: 1em;
+                            
+    }
+
+}
+
+li.invisible {
+    list-style: none;
+    list-style-position: inside;
+            
+}
+
+li {
+    list-style-image: url('/bullet.svg');
+}
+
+strong {
+    color: $primary-color;
+}
+
+footer {
+    display: flex;
+    border-top: dashed 2px $primary-color;
+}
+
+footer > div {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
