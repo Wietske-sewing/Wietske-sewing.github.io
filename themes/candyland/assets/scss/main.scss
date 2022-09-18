@@ -237,6 +237,7 @@ strong {
 footer {
     display: flex;
     border-top: dashed 2px $primary-color;
+    font-size: .7 * $font-size;
 }
 
 footer > div {
