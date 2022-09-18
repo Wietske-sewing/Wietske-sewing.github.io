@@ -23,14 +23,11 @@ h1, h2 {
   width: 65%;
   display: block; }
 
-.card:hover {
-  background-color: #ffffff; }
-
 .card-img {
   display: block;
   width: 30%; }
 
-.card-img > img {
+.card-img > a > img {
   object-fit: cover; }
 
 .search {
