@@ -163,7 +163,8 @@ strong {
 
 footer {
   display: flex;
-  border-top: dashed 2px #ffffff; }
+  border-top: dashed 2px #ffffff;
+  font-size: 14px; }
 
 footer > div {
   padding-top: 1em;
