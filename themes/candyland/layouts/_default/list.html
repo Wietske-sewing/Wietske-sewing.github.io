@@ -6,8 +6,8 @@
         <button><a id="{{ .Title }}" class="title" href="{{ .Permalink | relURL }}">{{ .Title  }}</a></button>
     {{ end }}
     {{ else }}
+    <h1>{{ .Title }}</h1>
     <div class="cards">
-        <h1>{{ .Title }}</h1>
         {{- partial "cards.html" .Pages.ByTitle -}}
     </div>
     {{ end }}
