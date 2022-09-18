@@ -1,12 +1,13 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
 
-    {{ if eq .Title "Patterns" }}
+    {{ if eq .Title "Tags" }}
+    <h1>Patterns</h1>
     {{ range (sort .Pages.ByTitle) }}
         <button><a id="{{ .Title }}" class="title" href="{{ .Permalink | relURL }}">{{ .Title  }}</a></button>
     {{ end }}
     {{ else }}
     <div class="cards">
+        <h1>{{ .Title }}</h1>
         {{- partial "cards.html" .Pages.ByTitle -}}
     </div>
     {{ end }}
