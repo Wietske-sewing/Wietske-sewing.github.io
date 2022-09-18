@@ -2,7 +2,8 @@ $primary-color: #ffffff;
 $background-color: #ff55aa;
 $card-color: #ff88cc;
 $font-color: #550022;
-$hover-color: #ff88cc;
+
+// $hover-color: #ffd5e9;
 
 $font-size: 20px;
 
@@ -40,16 +41,12 @@ h1, h2 {
     display: block;
 }
 
-.card:hover {
-    background-color: $primary-color;
-}
-
 .card-img {
     display: block;
     width: 30%;
 }
 
-.card-img > img {
+.card-img > a > img {
     object-fit: cover;
 }
 

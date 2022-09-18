@@ -1,4 +1,4 @@
-.PHONY: minify build
+.PHONY: minify build serve
 
 IMG=$(wildcard static/orig/*.jpg)
 IMG-MIN=$(IMG:static/orig/%.jpg=static/min/%.jpg)
@@ -11,3 +11,6 @@ static/min/%.jpg: static/orig/%.jpg
 
 build: minify
 	hugo -s ./
+
+serve: minify
+	hugo -D server
